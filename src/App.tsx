@@ -1,44 +1,45 @@
-import PasswordStrengthInput from "mui-password-strength-input";
-import Footer from "./Footer";
+import { Container, ThemeProvider, Typography, createTheme } from '@mui/material';
+import PasswordStrengthInput from 'mui-password-strength-input';
+import Footer from './Footer';
+
+const theme = createTheme();
 
 const App = () => {
   return (
-    <div className="flex flex-col justify-center items-center gap-12 min-h-[100vh] bg-gray-200">
-      <div className="flex flex-col gap-6 bg-white px-6 pt-6 pb-8 rounded-md w-[400px] shadow-md">
-        <div className="flex flex-col justify-center items-center gap-2">
-          <h1 className="text-xl font-bold">Password Strength Input</h1>
-          <p>Check the password strength</p>
+    <ThemeProvider theme={theme}>
+      <Container>
+        <div className="flex flex-col gap-2 mb-16 mt-2">
+          <Typography variant="h5">mui-password-strength-input</Typography>
+          <Typography>Click on the input field and type a password to see the strength indicator</Typography>
         </div>
-        <form>
-          <PasswordStrengthInput
-            className="border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-            /*
-              * decomment if overriding error labels and bar colors
-            */
-            // options={{
-            //   tooWeak: {
-            //     label: "Too weak 1",
-            //     color: "red",
-            //   },
-            //   weak: {
-            //     label: "Weak 1",
-            //     color: "yellow",
-            //   },
-            //   medium: {
-            //     label: "Medium 1",
-            //     color: "green",
-            //   },
-            //   strong: {
-            //     label: "Strong 1",
-            //     color: "blue",
-            //   },
-            // }}
-          />
-        </form>
-      </div>
-      <Footer />
-    </div>
-  );
-};
+        <PasswordStrengthInput
+          placeholder="Enter your password"
+          barClassName="!w-[50px]"
+          strengthLabelClassName="!text-xl"
+          className="!w-full !border-1 !border !b-green-500"
+          options={{
+            tooWeak: {
+              label: 'Too weak 2',
+              color: 'red',
+            },
+            weak: {
+              label: 'Weak 2',
+              color: 'yellow',
+            },
+            medium: {
+              label: 'Medium 2',
+              color: 'green',
+            },
+            strong: {
+              label: 'Strong 2',
+              color: 'blue'
+            },
+          }}
+        />
+        <Footer />
+      </Container>
+    </ThemeProvider>
+  )
+}
 
-export default App;
+export default App
