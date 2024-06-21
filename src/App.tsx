@@ -8,7 +8,7 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <div className="flex flex-col justify-center items-center min-h-dvh gap-4 bg-neutral-500">
-        <Card className="max-w-[400px]">
+        <Card className="max-w-[400px] pb-2 px-2">
           <CardContent>
             <div className="flex flex-col gap-3 mb-6 mt-2">
               <Typography variant="h5">mui-password-strength-input</Typography>
